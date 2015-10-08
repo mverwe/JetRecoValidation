@@ -56,14 +56,15 @@ process.GlobalTag = GlobalTag(process.GlobalTag, 'MCHI2_75_V2', '')
 
 process.GlobalTag.toGet.extend([
  cms.PSet(record = cms.string("HeavyIonRcd"),
-tag = cms.string("CentralityTable_HFtowers200_HydjetDrum5_v740x01_mc"),
+tag = cms.string("CentralityTable_HFtowers200_HydjetDrum5_v750x02_mc"),
 connect = cms.string("frontier://FrontierProd/CMS_COND_31X_PHYSICSTOOLS"),
 label = cms.untracked.string("HFtowersHydjetDrum5")
  ),
 ])
 
 from HeavyIonsAnalysis.Configuration.CommonFunctions_cff import *
-overrideGT_PbPb2760(process)
+#overrideGT_PbPb2760(process)
+overrideJEC_PbPb2760(process)
 
 process.load("RecoHI.HiCentralityAlgos.CentralityBin_cfi")
 process.centralityBin.Centrality = cms.InputTag("hiCentrality")
