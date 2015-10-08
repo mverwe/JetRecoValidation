@@ -52,7 +52,7 @@ process.load('FWCore.MessageService.MessageLogger_cfi')
 # PbPb 53X MC
 
 from Configuration.AlCa.GlobalTag_condDBv2 import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, 'MCHI2_75_V2', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '75X_mcRun2_HeavyIon_v5', '')
 
 process.GlobalTag.toGet.extend([
     cms.PSet(record = cms.string("HeavyIonRcd"),
