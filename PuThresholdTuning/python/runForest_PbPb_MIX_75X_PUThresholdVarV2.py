@@ -24,7 +24,7 @@ process.HiForest.HiForestVersion = cms.untracked.string(version)
 process.source = cms.Source("PoolSource",
                             duplicateCheckMode = cms.untracked.string("noDuplicateCheck"),
                             fileNames = cms.untracked.vstring(
-"/store/user/twang/Pyquen_DiJet_pt40_5020GeV_GEN_SIM_PU_20150813/Pyquen_DiJet_pt40_5020GeV_step3_RECODEBUG_20150813/3179e0200600a67eea51209589c07fdd/step3_RECODEBUG_RAW2DIGI_L1Reco_RECO_PU_100_1_ppt.root"
+"root://cmsxrootd.fnal.gov///store/user/twang/Pyquen_DiJet_pt40_5020GeV_GEN_SIM_PU_20150813/Pyquen_DiJet_pt40_5020GeV_step3_RECODEBUG_20150813/3179e0200600a67eea51209589c07fdd/step3_RECODEBUG_RAW2DIGI_L1Reco_RECO_PU_100_1_ppt.root"
                                 #"/store/relval/CMSSW_7_5_0_pre5/RelValPhotonJets_Pt_10_13_HI/GEN-SIM-RECO/MCHI2_75_V2-v2/00000/BAA0D4EC-AF0B-E511-95A6-02163E011865.root"
 
     ))
@@ -55,11 +55,11 @@ from Configuration.AlCa.GlobalTag_condDBv2 import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, 'MCHI2_75_V2', '')
 
 process.GlobalTag.toGet.extend([
- cms.PSet(record = cms.string("HeavyIonRcd"),
-tag = cms.string("CentralityTable_HFtowers200_HydjetDrum5_v750x02_mc"),
-connect = cms.string("frontier://FrontierProd/CMS_COND_31X_PHYSICSTOOLS"),
-label = cms.untracked.string("HFtowersHydjetDrum5")
- ),
+    cms.PSet(record = cms.string("HeavyIonRcd"),
+             tag = cms.string("CentralityTable_HFtowers200_HydjetDrum5_v750x02_mc"),
+             connect = cms.string("frontier://FrontierProd/CMS_CONDITIONS"),
+             label = cms.untracked.string("HFtowersHydjetDrum5")
+    ),
 ])
 
 from HeavyIonsAnalysis.Configuration.CommonFunctions_cff import *
