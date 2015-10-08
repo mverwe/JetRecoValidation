@@ -33,6 +33,11 @@ akPu3PFJets15 = akPu5PFJets.clone(rParam       = cms.double(0.3), puPtMin = 15) 
 akPu3PFJets20 = akPu5PFJets.clone(rParam       = cms.double(0.3), puPtMin = 20)
 akPu3PFJets25 = akPu5PFJets.clone(rParam       = cms.double(0.3), puPtMin = 25)
 akPu3PFJets30 = akPu5PFJets.clone(rParam       = cms.double(0.3), puPtMin = 30)
+akPu3PFJets10.radiusPU = 0.3
+akPu3PFJets15.radiusPU = 0.3
+akPu3PFJets20.radiusPU = 0.3
+akPu3PFJets25.radiusPU = 0.3
+akPu3PFJets30.radiusPU = 0.3
 
 hiRecoPFJets = cms.Sequence(
     PFTowers*
