@@ -24,7 +24,7 @@ config.Data.unitsPerJob = 1
 #config.Data.lumiMask = 'lumi_JSON.txt'
 #config.Data.runRange = '247324'
 #config.Data.outLFNDirBase = '/store/user/mverweij/pp2015/MC/Monash13_0T'
-config.Data.outLFNDirBase = '/store/group/cmst3/user/mverweij/jetsPbPb/Run2Prep/Dijet40CMSSW753p1/v2'
+config.Data.outLFNDirBase = '/store/group/cmst3/user/mverweij/jetsPbPb/Run2Prep/Dijet40CMSSW753p1/v3'
 config.Data.publication = False #True
 config.Data.publishDataName = ''
 
