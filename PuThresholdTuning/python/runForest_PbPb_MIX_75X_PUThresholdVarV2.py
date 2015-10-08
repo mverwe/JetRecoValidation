@@ -54,13 +54,13 @@ process.load('FWCore.MessageService.MessageLogger_cfi')
 from Configuration.AlCa.GlobalTag_condDBv2 import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, '75X_mcRun2_HeavyIon_v5', '')
 
-process.GlobalTag.toGet.extend([
-    cms.PSet(record = cms.string("HeavyIonRcd"),
-             tag = cms.string("CentralityTable_HFtowers200_HydjetDrum5_v750x02_mc"),
-             connect = cms.string("frontier://FrontierProd/CMS_CONDITIONS"),
-             label = cms.untracked.string("HFtowersHydjetDrum5")
-    ),
-])
+#process.GlobalTag.toGet.extend([
+#    cms.PSet(record = cms.string("HeavyIonRcd"),
+#             tag = cms.string("CentralityTable_HFtowers200_HydjetDrum5_v750x02_mc"),
+#             connect = cms.string("frontier://FrontierProd/CMS_CONDITIONS"),
+#             label = cms.untracked.string("HFtowersHydjetDrum5")
+#    ),
+#])
 
 from HeavyIonsAnalysis.Configuration.CommonFunctions_cff import *
 #overrideGT_PbPb2760(process)
