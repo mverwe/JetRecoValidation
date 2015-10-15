@@ -79,25 +79,25 @@ process.centralityBin.nonDefaultGlauberModel = cms.string("HydjetDrum5")
 process.TFileService = cms.Service("TFileService",
                                    fileName=cms.string("HiForest.root"))
 
-#####################################################################################
+################################################################################
 # Additional Reconstruction and Analysis: Main Body
-#####################################################################################
+################################################################################
 
 #begin: MV edits
 process.load('HiRecoPFJets_PuThreshold_cff') ##creates sequence hiRecoPFJets
-#process.load('HeavyIonsAnalysis.JetAnalysis.jets.akPu3PFJetSequence_PbPb_mc_cff')
-process.load('akPu3PFJetSequence10_cff')
-process.load('akPu3PFJetSequence15_cff')
-process.load('akPu3PFJetSequence20_cff')
-process.load('akPu3PFJetSequence25_cff')
-process.load('akPu3PFJetSequence30_cff')
 
-process.jetSequences = cms.Sequence(process.hiRecoPFJets
-                                    +process.akPu3PFJetSequence10
-                                    +process.akPu3PFJetSequence15
-                                    +process.akPu3PFJetSequence20
-                                    +process.akPu3PFJetSequence25
-                                    +process.akPu3PFJetSequence30
+process.load('akPu4PFJetSequence10_cff')
+process.load('akPu4PFJetSequence15_cff')
+process.load('akPu4PFJetSequence20_cff')
+process.load('akPu4PFJetSequence25_cff')
+process.load('akPu4PFJetSequence30_cff')
+
+process.jetSequences = cms.Sequence(process.hiRecoPFJets4
+                                    +process.akPu4PFJetSequence10
+                                    +process.akPu4PFJetSequence15
+                                    +process.akPu4PFJetSequence20
+                                    +process.akPu4PFJetSequence25
+                                    +process.akPu4PFJetSequence30
 )
 #end: MV edits
 

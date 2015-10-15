@@ -11,7 +11,7 @@ akPu3PFpatJets15 = akPu3PFpatJets.clone(jetSource = cms.InputTag("akPu3PFJets15"
                                         genJetMatch = cms.InputTag("akPu3PFmatch15"),
                                         genPartonMatch = cms.InputTag("akPu3PFparton15"),
 )
-akPu3PFJetAnalyzer15 = akPu3PFJetAnalyzer.clone(jetTag = cms.InputTag("akPu3PFpatJets15") )
+akPu3PFJetAnalyzer15 = akPu3PFJetAnalyzer.clone(jetTag = cms.InputTag("akPu3PFpatJets15"), doSubEvent = cms.untracked.bool(True) )
 akPu3PFJetSequence15 = cms.Sequence(akPu3PFmatch15
                                             *
                                             akPu3PFparton15
