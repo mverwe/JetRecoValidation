@@ -23,17 +23,6 @@ caloTowers = cms.EDProducer("CaloTowerCandidateCreator",
 
 ## Noise reducing PU subtraction algos
 
-## Iterative Cone
-iterativeConePu5CaloJets = cms.EDProducer(
-    "FastjetJetProducer",
-    HiCaloJetParameters,
-    AnomalousCellParameters,
-    MultipleAlgoIteratorBlock,
-    jetAlgorithm = cms.string("IterativeCone"),
-    rParam       = cms.double(0.5)
-)
-iterativeConePu5CaloJets.radiusPU = 0.5
-
 ## anti-kT
 akPu5CaloJets = cms.EDProducer(
     "FastjetJetProducer",
@@ -49,8 +38,8 @@ akPu5CaloJets.puPtMin = cms.double(10)
 akPu4CaloJets4 = akPu5CaloJets.clone(rParam       = cms.double(0.4), puPtMin = 4)
 akPu4CaloJets6 = akPu5CaloJets.clone(rParam       = cms.double(0.4), puPtMin = 6)
 akPu4CaloJets8 = akPu5CaloJets.clone(rParam       = cms.double(0.4), puPtMin = 8) #default run 1
-akPu4CaloJets10 = akPu5CaloJets.clone(rParam       = cms.double(0.4), puPtMin = 10)
-akPu4CaloJets12 = akPu5CaloJets.clone(rParam       = cms.double(0.4), puPtMin = 12)
+akPu4CaloJets10 = akPu5CaloJets.clone(rParam      = cms.double(0.4), puPtMin = 10)
+akPu4CaloJets12 = akPu5CaloJets.clone(rParam      = cms.double(0.4), puPtMin = 12)
 akPu4CaloJets4.radiusPU = 0.5
 akPu4CaloJets6.radiusPU = 0.5
 akPu4CaloJets8.radiusPU = 0.5

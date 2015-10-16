@@ -84,6 +84,8 @@ process.TFileService = cms.Service("TFileService",
 ################################################################################
 
 #begin: MV edits
+
+## PF jets
 process.load('HiRecoPFJets_PuThreshold_cff') ##creates sequence hiRecoPFJets
 
 process.load('akPu4PFJetSequence10_cff')
@@ -92,13 +94,31 @@ process.load('akPu4PFJetSequence20_cff')
 process.load('akPu4PFJetSequence25_cff')
 process.load('akPu4PFJetSequence30_cff')
 
-process.jetSequences = cms.Sequence(process.hiRecoPFJets4
-                                    +process.akPu4PFJetSequence10
-                                    +process.akPu4PFJetSequence15
-                                    +process.akPu4PFJetSequence20
-                                    +process.akPu4PFJetSequence25
-                                    +process.akPu4PFJetSequence30
+process.jetSequencesPF = cms.Sequence(process.hiRecoPFJets4
+                                      +process.akPu4PFJetSequence10
+                                      +process.akPu4PFJetSequence15
+                                      +process.akPu4PFJetSequence20
+                                      +process.akPu4PFJetSequence25
+                                      +process.akPu4PFJetSequence30
 )
+
+## Calo jets
+process.load('HiRecoCaloJets_PuThreshold_cff') ##creates sequence hiRecoPFJets
+
+process.load('akPu4CaloJetSequence4_cff')
+process.load('akPu4CaloJetSequence6_cff')
+process.load('akPu4CaloJetSequence8_cff')
+process.load('akPu4CaloJetSequence10_cff')
+process.load('akPu4CaloJetSequence12_cff')
+
+process.jetSequencesCalo = cms.Sequence(process.hiRecoCaloJets4
+                                        +process.akPu4CaloJetSequence4
+                                        +process.akPu4CaloJetSequence6
+                                        +process.akPu4CaloJetSequence8
+                                        +process.akPu4CaloJetSequence10
+                                        +process.akPu4CaloJetSequence12
+)
+
 #end: MV edits
 
 process.load('HeavyIonsAnalysis.EventAnalysis.hievtanalyzer_mc_cfi')
@@ -192,7 +212,8 @@ process.ana_step = cms.Path(process.heavyIon*
                             process.quickTrackAssociatorByHits*
                             #process.tpRecoAssocGeneralTracks + #used in HiPFJetAnalyzer
                             process.hiSelectGenJets +
-                            process.jetSequences +
+                            process.jetSequencesPF +
+                            process.jetSequencesCalo +
                             process.ggHiNtuplizer +
                             process.pfcandAnalyzer +
                             process.rechitAna +
