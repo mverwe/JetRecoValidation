@@ -48,8 +48,7 @@ akPu4CaloJets12.radiusPU = 0.5
 
 ## Default Sequence
 hiRecoCaloJets4 = cms.Sequence(
-    caloTowersRec*caloTowers*
-    iterativeConePu5CaloJets*
+    #caloTowersRec*caloTowers*
     akPu4CaloJets4*akPu4CaloJets6*akPu4CaloJets8*akPu4CaloJets10*akPu4CaloJets12
 )
 
