@@ -29,6 +29,18 @@ akPu5PFJets = ak5PFJets.clone(jetType = cms.string('BasicJet'),
 
 akPu5PFJets.puPtMin = cms.double(25)
 
+#R=0.2
+akPu2PFJets5 = akPu5PFJets.clone(rParam       = cms.double(0.2), puPtMin = 5)
+akPu2PFJets10 = akPu5PFJets.clone(rParam       = cms.double(0.2), puPtMin = 10) #default run 1
+akPu2PFJets15 = akPu5PFJets.clone(rParam       = cms.double(0.2), puPtMin = 15)
+akPu2PFJets20 = akPu5PFJets.clone(rParam       = cms.double(0.2), puPtMin = 20)
+akPu2PFJets25 = akPu5PFJets.clone(rParam       = cms.double(0.2), puPtMin = 25)
+akPu2PFJets5.radiusPU = 0.5
+akPu2PFJets10.radiusPU = 0.5
+akPu2PFJets15.radiusPU = 0.5
+akPu2PFJets20.radiusPU = 0.5
+akPu2PFJets25.radiusPU = 0.5
+
 #R=0.3
 akPu3PFJets10 = akPu5PFJets.clone(rParam       = cms.double(0.3), puPtMin = 10)
 akPu3PFJets15 = akPu5PFJets.clone(rParam       = cms.double(0.3), puPtMin = 15) #default run 1
@@ -53,6 +65,10 @@ akPu4PFJets20.radiusPU = 0.5
 akPu4PFJets25.radiusPU = 0.5
 akPu4PFJets30.radiusPU = 0.5
 
+hiRecoPFJets2 = cms.Sequence(
+    PFTowers*
+    akPu2PFJets5*akPu2PFJets10*akPu2PFJets15*akPu2PFJets20*akPu2PFJets25
+)
 
 hiRecoPFJets3 = cms.Sequence(
     PFTowers*

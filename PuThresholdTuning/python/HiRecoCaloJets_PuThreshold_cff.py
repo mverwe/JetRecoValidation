@@ -33,6 +33,19 @@ akPu5CaloJets = cms.EDProducer(
     rParam       = cms.double(0.5)
 )
 akPu5CaloJets.puPtMin = cms.double(10)
+akPu5CaloJets.radiusPU = cms.double(0.5)
+
+#R=0.2
+akPu2CaloJets2 = akPu5CaloJets.clone(rParam       = cms.double(0.2), puPtMin = 2)
+akPu2CaloJets4 = akPu5CaloJets.clone(rParam       = cms.double(0.2), puPtMin = 4)#default run1
+akPu2CaloJets6 = akPu5CaloJets.clone(rParam       = cms.double(0.2), puPtMin = 6)
+akPu2CaloJets8 = akPu5CaloJets.clone(rParam       = cms.double(0.2), puPtMin = 8)
+akPu2CaloJets10 = akPu5CaloJets.clone(rParam      = cms.double(0.2), puPtMin = 10)
+akPu2CaloJets2.radiusPU = 0.5
+akPu2CaloJets4.radiusPU = 0.5
+akPu2CaloJets6.radiusPU = 0.5
+akPu2CaloJets8.radiusPU = 0.5
+akPu2CaloJets10.radiusPU = 0.5
 
 #R=0.4
 akPu4CaloJets4 = akPu5CaloJets.clone(rParam       = cms.double(0.4), puPtMin = 4)
@@ -46,9 +59,12 @@ akPu4CaloJets8.radiusPU = 0.5
 akPu4CaloJets10.radiusPU = 0.5
 akPu4CaloJets12.radiusPU = 0.5
 
-## Default Sequence
+## Sequences
+hiRecoCaloJets2 = cms.Sequence(
+    akPu2CaloJets2*akPu2CaloJets4*akPu2CaloJets6*akPu2CaloJets8*akPu2CaloJets10
+)
+
 hiRecoCaloJets4 = cms.Sequence(
-    #caloTowersRec*caloTowers*
     akPu4CaloJets4*akPu4CaloJets6*akPu4CaloJets8*akPu4CaloJets10*akPu4CaloJets12
 )
 
