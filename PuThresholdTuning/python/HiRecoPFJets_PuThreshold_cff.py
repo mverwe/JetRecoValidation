@@ -30,7 +30,7 @@ akPu5PFJets = ak5PFJets.clone(jetType = cms.string('BasicJet'),
 akPu5PFJets.puPtMin = cms.double(25)
 
 #R=0.2
-akPu2PFJets5 = akPu5PFJets.clone(rParam       = cms.double(0.2), puPtMin = 5)
+akPu2PFJets5  = akPu5PFJets.clone(rParam       = cms.double(0.2), puPtMin = 5)
 akPu2PFJets10 = akPu5PFJets.clone(rParam       = cms.double(0.2), puPtMin = 10) #default run 1
 akPu2PFJets15 = akPu5PFJets.clone(rParam       = cms.double(0.2), puPtMin = 15)
 akPu2PFJets20 = akPu5PFJets.clone(rParam       = cms.double(0.2), puPtMin = 20)

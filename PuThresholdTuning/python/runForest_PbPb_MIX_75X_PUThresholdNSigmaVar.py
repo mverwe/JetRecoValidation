@@ -86,39 +86,62 @@ process.TFileService = cms.Service("TFileService",
 #begin: MV edits
 
 ## PF jets
-process.load('HiRecoPFJets_PuThreshold_cff') ##creates sequence hiRecoPFJets
+process.load('HiRecoPFJets_PuThreshold_nSigmaPU_cff') ##creates sequence hiRecoPFJets
 
-process.load('akPu2PFJetSequence5_cff')
+process.load('akPu2PFJetSequence05_cff')
 process.load('akPu2PFJetSequence10_cff')
 process.load('akPu2PFJetSequence15_cff')
-process.load('akPu2PFJetSequence20_cff')
-process.load('akPu2PFJetSequence25_cff')
 
-process.jetSequencesPF = cms.Sequence(process.hiRecoPFJets2
-                                      *process.akPu2PFJetSequence5
-                                      +process.akPu2PFJetSequence10
-                                      +process.akPu2PFJetSequence15
-                                      +process.akPu2PFJetSequence20
-                                      +process.akPu2PFJetSequence25
+process.load('akPu3PFJetSequence05_cff')
+process.load('akPu3PFJetSequence10_cff')
+process.load('akPu3PFJetSequence15_cff')
+
+process.load('akPu4PFJetSequence05_cff')
+process.load('akPu4PFJetSequence10_cff')
+process.load('akPu4PFJetSequence15_cff')
+
+
+process.jetSequencesPF = cms.Sequence(process.hiRecoPFJets
+                                      *process.akPu2PFJetSequence05
+                                      *process.akPu2PFJetSequence10
+                                      *process.akPu2PFJetSequence15
+                                      *process.akPu3PFJetSequence05
+                                      *process.akPu3PFJetSequence10
+                                      *process.akPu3PFJetSequence15
+                                      *process.akPu4PFJetSequence05
+                                      *process.akPu4PFJetSequence10
+                                      *process.akPu4PFJetSequence15
+
 )
 
 ## Calo jets
-process.load('HiRecoCaloJets_PuThreshold_cff') ##creates sequence hiRecoPFJets
+process.load('HiRecoCaloJets_PuThreshold_nSigmaPU_cff') ##creates sequence hiRecoPFJets
 
-process.load('akPu2CaloJetSequence2_cff')
-process.load('akPu2CaloJetSequence4_cff')
-process.load('akPu2CaloJetSequence6_cff')
-process.load('akPu2CaloJetSequence8_cff')
+process.load('akPu2CaloJetSequence05_cff')
 process.load('akPu2CaloJetSequence10_cff')
+process.load('akPu2CaloJetSequence15_cff')
 
-process.jetSequencesCalo = cms.Sequence(process.hiRecoCaloJets2
-                                        +process.akPu2CaloJetSequence2
-                                        +process.akPu2CaloJetSequence4
-                                        +process.akPu2CaloJetSequence6
-                                        +process.akPu2CaloJetSequence8
-                                        +process.akPu2CaloJetSequence10
+process.load('akPu3CaloJetSequence05_cff')
+process.load('akPu3CaloJetSequence10_cff')
+process.load('akPu3CaloJetSequence15_cff')
+
+process.load('akPu4CaloJetSequence05_cff')
+process.load('akPu4CaloJetSequence10_cff')
+process.load('akPu4CaloJetSequence15_cff')
+
+
+process.jetSequencesCalo = cms.Sequence(process.hiRecoCaloJets
+                                        *process.akPu2CaloJetSequence05
+                                        *process.akPu2CaloJetSequence10
+                                        *process.akPu2CaloJetSequence15
+                                        *process.akPu3CaloJetSequence05
+                                        *process.akPu3CaloJetSequence10
+                                        *process.akPu3CaloJetSequence15
+                                        *process.akPu4CaloJetSequence05
+                                        *process.akPu4CaloJetSequence10
+                                        *process.akPu4CaloJetSequence15
+                                        
 )
-
 #end: MV edits
 
 process.load('HeavyIonsAnalysis.EventAnalysis.hievtanalyzer_mc_cfi')

@@ -1,6 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-from HeavyIonsAnalysis.JetAnalysis.jets.akPu4CaloJetSequence_PbPb_mc_cff import *
+from HeavyIonsAnalysis.JetAnalysis.jets.akPu2CaloJetSequence_PbPb_mc_cff import *
 
 #PU jets with 6 GeV threshold for subtraction
 akPu2Calomatch6 = akPu4Calomatch.clone(src = cms.InputTag("akPu2CaloJets6"))
