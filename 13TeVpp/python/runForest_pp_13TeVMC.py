@@ -67,6 +67,7 @@ process.TFileService = cms.Service("TFileService",
 
 process.load('HeavyIonsAnalysis.JetAnalysis.jets.ak4PFJetSequence_pp_mc_cff')
 process.ak4PFmatch.matched = cms.InputTag("ak4GenJetsNoNu")
+process.ak4PFcorr.levels   = cms.vstring('L1FastJet','L2Relative','L3Absolute','L2L3Residual')
 process.ak4PFcorr.payload="AK4PF";
 process.ak4PFJetAnalyzer.jetPtMin = cms.untracked.double(1)
 process.ak4PFJetAnalyzer.genjetTag = 'ak4GenJetsNoNu'
@@ -99,6 +100,8 @@ process.jetSequences = cms.Sequence(process.ak4PFJetSequence
 
 process.load('HeavyIonsAnalysis.EventAnalysis.hievtanalyzer_mc_cfi')
 process.hiEvtAnalyzer.doMC = cms.bool(True) #the gen info dataformat has changed in 73X, we need to update hiEvtAnalyzer code
+process.hiEvtAnalyzer.useHepMC = cms.bool(False) 
+
 process.hiEvtAnalyzer.doCentrality     = cms.bool(False)
 process.hiEvtAnalyzer.doEvtPlane       = cms.bool(False)
 process.hiEvtAnalyzer.doEvtPlaneFlat   = cms.bool(False)

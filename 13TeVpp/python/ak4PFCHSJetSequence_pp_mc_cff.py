@@ -17,7 +17,7 @@ ak4PFCHSparton = patJetPartonMatch.clone(src = cms.InputTag("ak4PFJetsCHS"),
 ak4PFCHScorr = patJetCorrFactors.clone(
     useNPV = False,
 #    primaryVertices = cms.InputTag("hiSelectedVertex"),
-    levels   = cms.vstring('L2Relative','L3Absolute'),
+    levels   = cms.vstring('L1FastJet','L2Relative','L3Absolute','L2L3Residual'),
     src = cms.InputTag("ak4PFJetsCHS"),
     payload = "AK4PFchs"
     )
