@@ -19,7 +19,7 @@ ivars.register ('outputFile',
                 mytype=ivars.varType.string,
                 info="for testing")
 
-ivars.inputFile="ue_calibrations_calo_mc.txt"
+ivars.inputFile="ue_calibrations_calo_data.txt"
 #ivars.outputFile="./output.db"
 ivars.outputFile="./UETable_Calo_HYDJET_5020GeV_754_38T_v00_data.db"
 
