@@ -6,7 +6,8 @@ ivars.register ('outputTag',
                 mult=ivars.multiplicity.singleton,
                 mytype=ivars.varType.string,
                 info="for testing")
-ivars.outputTag="UETable_PF_v00_mc"
+#ivars.outputTag="UETable_PF_v00_mc"
+ivars.outputTag="UETable_PF_HYDJET_5020GeV_754_38T_v00_mc"
 
 ivars.register ('inputFile',
                 mult=ivars.multiplicity.singleton,
@@ -19,7 +20,8 @@ ivars.register ('outputFile',
                 info="for testing")
 
 ivars.inputFile="ue_calibrations_pf_mc.txt"
-ivars.outputFile="./output.db"
+#ivars.outputFile="./output.db"
+ivars.outputFile="./UETable_PF_HYDJET_5020GeV_754_38T_v00_mc.db"
 
 ivars.parseArguments()
 
