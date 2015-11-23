@@ -6,7 +6,7 @@ ivars.register ('outputTag',
                 mult=ivars.multiplicity.singleton,
                 mytype=ivars.varType.string,
                 info="for testing")
-ivars.outputTag="UETableCompatibilityFormat_Calo_v00_express"
+ivars.outputTag="UETableCompatibilityFormat_PF_v00_express"
 
 ivars.register ('inputFile',
                 mult=ivars.multiplicity.singleton,
@@ -18,8 +18,8 @@ ivars.register ('outputFile',
                 mytype=ivars.varType.string,
                 info="for testing")
 
-ivars.inputFile="ue_calibrations_calo_data.txt"
-ivars.outputFile="./UETableCompatibilityFormat_Calo_v00_express.db"
+ivars.inputFile="ue_calibrations_pf_data.txt"
+ivars.outputFile="./UETableCompatibilityFormat_PF_v00_express.db"
 
 ivars.parseArguments()
 
@@ -43,7 +43,7 @@ process.PoolDBOutputService = cms.Service("PoolDBOutputService",
                                           timetype = cms.untracked.string("runnumber"),
                                           toPut = cms.VPSet(cms.PSet(record = cms.string('JetCorrectionsRecord'),
                                                                      tag = cms.string(ivars.outputTag),
-                                                                     label = cms.string("UETable_Calo")
+                                                                     label = cms.string("UETable_PF")
                                                                      )
                                                             )
                                           )
